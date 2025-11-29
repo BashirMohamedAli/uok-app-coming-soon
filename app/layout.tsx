@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://uok.edu"),
   openGraph: {
     title: "University of Kabridahar - Beta Testing Program",
     description: "Join our beta testing program for the University of Kabridahar mobile app.",
