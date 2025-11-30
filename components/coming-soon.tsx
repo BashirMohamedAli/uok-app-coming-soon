@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
 import { Mail, CheckCircle2 } from "lucide-react"
 import { SubscriptionForm } from "./subscription-form"
 
@@ -12,14 +14,12 @@ export function ComingSoon() {
       {/* Header */}
       <header className="w-full py-4 sm:py-6 px-4 sm:px-6 md:px-12">
         <div className="flex items-center justify-center gap-3 max-w-7xl mx-auto">
-          <div className="relative">
-            <img 
+          <div className="relative h-12 w-12 sm:h-14 sm:w-14">
+            <Image 
               src="/logo.jpg" 
               alt="University of Kabridahar" 
-              className="h-12 w-12 sm:h-14 sm:w-14 rounded-xl object-cover shadow-sm border-2 border-primary/10"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-              }}
+              fill
+              className="rounded-xl object-cover shadow-sm border-2 border-primary/10"
             />
           </div>
           <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-foreground">
@@ -91,6 +91,30 @@ export function ComingSoon() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="w-full py-6 px-4 sm:px-6 md:px-12 border-t border-border">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <p className="text-sm text-muted-foreground text-center">
+            © {new Date().getFullYear()} University of Kabridahar. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4">
+            <Link 
+              href="/privacy-policy" 
+              className="text-sm text-primary hover:underline font-medium"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-muted-foreground">•</span>
+            <Link 
+              href="/terms-and-conditions" 
+              className="text-sm text-primary hover:underline font-medium"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 }
